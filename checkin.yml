@@ -1,0 +1,30 @@
+name: Telegram Auto Check-in
+
+on:
+  schedule:
+    # 每天北京时间 01:00 运行
+    - cron: '0 17 * * *'
+  workflow_dispatch:
+
+jobs:
+  checkin:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Run Telegram Check-in Script
+      env:
+        TG_API_ID: ${{ secrets.TG_API_ID }}
+        TG_API_HASH: ${{ secrets.TG_API_HASH }}
+        TG_SESSION: ${{ secrets.TG_SESSION }}
+      run: python checkin.py
