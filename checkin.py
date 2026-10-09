@@ -18,11 +18,12 @@ from telethon.errors import (
 
 TARGETS = {
     "@yzaws_bot":           "/checkin",    #大姨子
+    3219886860:             "/checkin",    # DNSHE域名
 }
 
 # 新增：群组数字 ID 签到列表
 GROUP_CHECKINS = [
-    (-1003219886860, "/checkin"),        # DNSHE域名
+#    (-1003219886860, "/checkin"),        # DNSHE域名
 ]
 
 # 真正的签到按钮关键词，只有匹配到这里的按钮，才会被当成真正签到按钮点击
