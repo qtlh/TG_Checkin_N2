@@ -11,21 +11,21 @@ jobs:
     timeout-minutes: 15
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-      TG_SESSION:  ${{ secrets.TG_SESSION }}
-      TG_API_ID:   ${{ secrets.TG_API_ID }}
+      TG_SESSION: ${{ secrets.TG_SESSION }}
+      TG_API_ID: ${{ secrets.TG_API_ID }}
       TG_API_HASH: ${{ secrets.TG_API_HASH }}
-	  
+      
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-		
+        
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-		  
+          
       - name: Install dependencies
         run: pip install telethon requests
-		
+        
       - name: Run checkin
         run: python checkin.py
