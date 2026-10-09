@@ -1,0 +1,31 @@
+name: Telegram 每日签到
+
+on:
+  schedule:
+    - cron: "0 17 * * *"   # UTC 17:00 = 北京时间 01:00
+  workflow_dispatch:
+  
+jobs:
+  checkin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      TG_SESSION:  ${{ secrets.TG_SESSION }}
+      TG_API_ID:   ${{ secrets.TG_API_ID }}
+      TG_API_HASH: ${{ secrets.TG_API_HASH }}
+	  
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+		
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+		  
+      - name: Install dependencies
+        run: pip install telethon requests
+		
+      - name: Run checkin
+        run: python checkin.py
