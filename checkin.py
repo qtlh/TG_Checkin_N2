@@ -17,7 +17,7 @@ from telethon.errors import (
 # ================= 配置区域 =================
 
 TARGETS = {
-    "@yzaws_bot":           "/checkin",    #大姨子
+    "@yzaws_bot":           "/checkin",    # 大姨子
     "@DNSHEbot":            "/checkin",    # DNSHE域名
 }
 
