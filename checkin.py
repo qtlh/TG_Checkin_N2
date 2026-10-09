@@ -18,7 +18,7 @@ from telethon.errors import (
 
 TARGETS = {
     "@yzaws_bot":           "/checkin",    #大姨子
-    3219886860:             "/checkin",    # DNSHE域名
+    "@DNSHEbot":            "/checkin",    # DNSHE域名
 }
 
 # 新增：群组数字 ID 签到列表
