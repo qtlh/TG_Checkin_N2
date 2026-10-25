@@ -18,6 +18,7 @@ from telethon.errors import (
 
 TARGETS = {
     "@yzaws_bot":           "/checkin",    # 大姨子
+    "@LuckyStar9988":       "签到",         # 幸运星
 }
 
 # 新增：群组数字 ID 签到列表
