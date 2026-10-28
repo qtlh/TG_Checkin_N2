@@ -21,7 +21,6 @@ TARGETS = {
     "@LuckyStar9988":       "签到",         # 幸运星
     "@xiaomaofeijidailibot":    "签到",     # 小猫飞机代理
 }
-}
 
 # 新增：群组数字 ID 签到列表
 GROUP_CHECKINS = [
